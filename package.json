@@ -1,0 +1,19 @@
+{
+  "name": "sofia",
+  "version": "1.0.0",
+  "description": "website group too sofia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onkelhoy/Sofia.git"
+  },
+  "author": "Henry Pap <onkelhoy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onkelhoy/Sofia/issues"
+  },
+  "homepage": "https://github.com/onkelhoy/Sofia#readme"
+}
