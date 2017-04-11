@@ -1,21 +1,30 @@
 "use strict";
 
-var app = require('express')();
-var port = 80 || process.env.PORT;
+// modules
+const exp   = require('express'),
+      app   = exp(),
+      fs    = require('fs'),
+      path  = require('path');
+
+// application settings
+app.set('port', 80 || process.env.PORT);
+app.set('view engine', 'ejs');
+
+app.use(exp.static(path.join(__dirname, 'semantic')));
+app.use(exp.static(path.join(__dirname, 'public')));
 
 // the different paths
-app.use('/Work hours', require('./Work hours/index'));
+app.use('/Work_hours', require('./Work_Hours/index'));
 
 // main path
 app.get('/', function(req, res){
-  
-});
-
-// any other paths
-app.get('*', function(req, res){
+  res.status(200).render('index', {
+    dictionaries: fs.readdirSync(__dirname).filter(file => fs.statSync(path.join(__dirname, file)).isDirectory())
+  });
+}).get('*', function(req, res){ // any other paths
   res.status(404).send('Kan inte hitta sidan Sofia..');
 });
 
-app.listen(port, function(){
-  console.log('app is running on port:' + port);
+app.listen(app.get('port'), function(){
+  console.log('app is running on port:' + app.get('port'));
 });

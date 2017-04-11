@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Work Hours</title>
+    <link rel="icon" type="image/png" href="images/work.png">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="js/main.js">
+
+    </script>
+  </head>
+  <body>
+    <div class="ui text justified container con2">
+      <table class="ui compact celled definition table">
+      <thead class="full-width">
+        <tr>
+          <th></th>
+          <th>Start</th>
+          <th>Rast</th>
+          <th>Slut</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+      <tfoot class="full-width">
+        <tr>
+          <th></th>
+          <th colspan="4">
+            <div class="ui form">
+              <div class="fields">
+                <div class="field">
+                  <label>Start</label>
+                  <input type="text" id="s" placeholder="07.30">
+                </div>
+                <div class="field">
+                  <label>Rast</label>
+                  <input type="text" id="r" placeholder="30 || (1.30 -> 1h:30m)">
+                </div>
+                <div class="field">
+                  <label>Slut</label>
+                  <input type="text" id="e" placeholder="16:20">
+                </div>
+                <div class="field">
+                  <label>Total</label>
+                  <div class="ui disabled input">
+                    <input type="text" id="total" value="Den totala tiden">
+                  </div>
+                </div>
+              </div>
+              <button onclick="show();" id="ammount" class="ui positive right floated right labeled icon button">
+                Tjänat
+                <i class="dollar icon"></i>
+              </button>
+
+              <button id="submit" onclick="add($('#s').val(), $('#r').val(), $('#e').val());" class="ui primary labeled icon button">
+                <i class="plus icon"></i>
+                Lägg till
+              </button>
+            </div>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br><br><br>
+    </div>
+  </body>
+</html>

@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/onkelhoy/Sofia/issues"
   },
-  "homepage": "https://github.com/onkelhoy/Sofia#readme"
+  "homepage": "https://github.com/onkelhoy/Sofia#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "semantic-ui": "^2.2.10"
+  }
 }
