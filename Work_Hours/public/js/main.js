@@ -118,14 +118,21 @@ function show(){
     h = Number(h);
     if(m == 0) m = 1;
 
-    var cash = (h + 60/m) * 150;
+    // the ammount you get
+    var cash = Math.round((h + 60/m) * 150)+'';
+    // reverse it for splitting by 3th char
+    cash = cash.split("").reverse().join("");
+    // split by 3th
+    cash = cash.match(/.{1,3}/g).join('.');
+    // reverse it back to normal
+    cash = cash.split("").reverse().join("");
 
     // poor use of name..
     showError('ammount', {
       on       : 'focus',
       position : 'bottom right',
       title    : 'Du har',
-      content  : 'Änsålänge har du tjänat ihop: '+ cash +'kr [innan skatt]'
+      content  : 'Änsålänge har du tjänat ihop: '+ cash +' kr [innan skatt]'
     });
 
   }
