@@ -25,7 +25,9 @@
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "fs": "0.0.1-security",
-    "path": "^0.12.7",
-    "semantic-ui": "^2.2.10"
+    "jsonfile": "^2.4.0",
+    "mysql": "^2.13.0",
+    "mysqldump": "^1.4.2",
+    "path": "^0.12.7"
   }
 }
