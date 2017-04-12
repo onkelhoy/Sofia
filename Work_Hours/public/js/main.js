@@ -84,6 +84,7 @@ function getTime(value){
   // try split
   var vals = value.split(/[\s,.:-]+/), error = false;
   for(var i = 0; i < vals.length && !error; i++){
+    if(i > 0 && vals[i].length == 1) vals[i] += "0";
     var num = Number(vals[i]);
     if(!isNaN(num)) vals[i] = num;
     else {
@@ -116,10 +117,9 @@ function show(){
   else {
     var m = Number($('#total').attr('m'));
     h = Number(h);
-    if(m == 0) m = 1;
 
     // the ammount you get
-    var cash = Math.round((h + 60/m) * 150)+'';
+    var cash = Math.round((h + (m == 0 ? 0 : 60/m)) * 150)+'';
     // reverse it for splitting by 3th char
     cash = cash.split("").reverse().join("");
     // split by 3th
@@ -131,8 +131,8 @@ function show(){
     showError('ammount', {
       on       : 'focus',
       position : 'bottom right',
-      title    : 'Du har',
-      content  : 'Änsålänge har du tjänat ihop: '+ cash +' kr [innan skatt]'
+      title    : 'Cash money flash money',
+      content  : 'Du har än så länge tjänat ihop '+ cash +'kr. (innan skatt)'
     });
 
   }
