@@ -15,6 +15,7 @@ app.use(exp.static(path.join(__dirname, 'public')));
 
 // the different paths
 app.use('/Work_hours', require('./Work_Hours/index'));
+app.use('/Recept', require('./Recept/index'));
 
 // main path
 app.get('/', function(req, res){
