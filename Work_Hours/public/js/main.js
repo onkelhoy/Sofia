@@ -21,7 +21,7 @@ function add(start, rast, slut){
       var h = values[2][0] - values[0][0];
 
       var min = 0;
-      if(values[0].length == 2) min += values[0][1];
+      if(values[0].length == 2) min -= values[0][1];
       if(values[2].length == 2) min += values[2][1];
       if(values[1].length == 2){
         h -= values[1][0];
