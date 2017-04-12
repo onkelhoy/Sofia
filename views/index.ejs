@@ -10,7 +10,8 @@
     <hr>
     <ul>
     <% for(var i = 0; i < dictionaries.length; i++) { %>
-      <% if(dictionaries[i] != '.git' && dictionaries[i] != 'node_modules' && dictionaries[i] != 'views' && dictionaries[i] != 'semantic' && dictionaries[i] != 'public') { %>
+      <% var d = dictionaries[i] %>
+      <% if(!d.startsWith('.') && d != 'node_modules' && d != 'views' && d != 'semantic' && d != 'public') { %>
         <li><a href="/<%= dictionaries[i] %>"><%= dictionaries[i] %></a></li>
       <% } %>
     <% } %>
