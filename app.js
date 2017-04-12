@@ -7,7 +7,7 @@ const exp   = require('express'),
       path  = require('path');
 
 // application settings
-app.set('port', 80 || process.env.PORT);
+app.set('port', process.env.PORT || 80);
 app.set('view engine', 'ejs');
 
 app.use(exp.static(path.join(__dirname, 'semantic')));
