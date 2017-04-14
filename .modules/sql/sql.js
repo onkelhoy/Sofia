@@ -118,5 +118,5 @@ exports.setDatabase = function(destination, host, user, password, db, callback){
 			if(typeof callback == 'function') updateDatabase(callback);
       else updateDatabase();
 		}
-	})
+	});
 }

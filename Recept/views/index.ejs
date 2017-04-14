@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recept</title>
+    <% include ../../views/head.ejs %>
+    <script type="text/javascript" src="js/search.js"></script>
+    <style media="screen">
+    body {
+      background-image: url(images/pattern.png);
+      background-size: 400px 400px;
+    }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let RECEPTS;
+      <% if(typeof recept == "undefined") { %>
+        alert('error');
+      <% } else { %>
+
+        RECEPTS = <%- JSON.stringify(recept) %>;
+
+      <% } %>
+    </script>
+    <div class="ui container">
+      <div class="ui category search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="Sök recept...">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+  </body>
+</html>

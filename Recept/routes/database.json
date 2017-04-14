@@ -1,0 +1,66 @@
+{
+  "recept": [
+    {
+      "titel": "Lax och potatis",
+      "kategori": "Fisk",
+      "beskrivning": "Enkel snabb rätt som smakar väldigt gott",
+      "associeringar": "potatis,fisk,kallsås",
+      "betyg": 4,
+      "id": 0,
+      "ingredienser": [
+        {
+          "del": "Lax och potatis",
+          "ingredienser": [
+            {"namn": "potatis", "mått": "5st"},
+            {"namn": "lax", "mått": "400g"}
+          ]
+        },
+        {
+          "del": "Kallsås",
+          "ingredienser": [
+            {"namn": "creme fraiche", "mått": "4 dl"},
+            {"namn": "majonäs", "mått": "2msk"},
+            {"namn": "dill", "mått": "1/2 dl"},
+            {"namn": "saltgurka", "mått": "3st (små)"},
+            {"namn": "salt", "mått": "1tsk"},
+            {"namn": "peppar", "mått": "1/2tsk"}
+          ]
+        }
+      ],
+      "tillagning": [
+        {
+          "del": "Potatis och lax",
+          "moment": [
+            {"steg": "Koka vatten i en kastrull", "notis": "på högsta värme"},
+            {"steg": "Sätt stekpannan på värme", "notis": "lite mer än hälften"},
+            {"steg": "Häll i olja med en klick smör i stekpannan", "notis": "oljan skall täcka laxen till 1/3 del, smör är för smak"},
+            {"steg": "Salta och peppra laxen för egen smak", "notis": ""},
+            {"steg": "Tillaga laxen när pannan är varm", "notis": "ca 20min (tills att den har fått en gyllende färg)"},
+            {"steg": "tillsatt salt", "notis": "lagom mycket"},
+            {"steg": "När vattnet kokar, tillsatt salt och potatis", "notis": "med skal"},
+            {"steg": "låt koka i 30min", "notis": "provstick för att kolla om den är färdig"}
+          ]
+        },
+        {
+          "del": "Kallsås",
+          "moment": [
+            {"steg": "Hacka saltgurkan", "notis": "grov hackning"},
+            {"steg": "Rör ihop salt, peppar och dill", "notis": ""},
+            {"steg": "Häll ner creme fraiche i en skål", "notis": ""},
+            {"steg": "Tillsat majonäsen i samma skål", "notis": ""},
+            {"steg": "Häll ner saltröran och blanda", "notis": "se till att saltröran blandas ordentligt med creme fraichen och majonäsen"},
+            {"steg": "Häll ner den hackade saltgurkan", "notis": "rör ihop försiktigt"}
+          ]
+        },
+        {
+          "del": "Servering",
+          "moment": [
+            {"steg": "Duka fina tallrikar med bestik och höga glas", "notis": ""},
+            {"steg": "Ställ kallt vatten på bordet", "notis": ""},
+            {"steg": "Servera dina gäster och njut", "notis": ""}
+          ]
+        }
+      ]
+    }
+  ]
+}
