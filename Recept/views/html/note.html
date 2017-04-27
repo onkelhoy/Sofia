@@ -1,0 +1,32 @@
+<script>
+  $(document).ready(function(){
+    addNote({
+      head: 'Hello World',
+      notes: [
+        'line 1',
+        'line 2',
+        'line 3',
+        'line 4',
+        'line 5',
+        'line 6',
+        'line 7',
+        'line 8'
+      ],
+      target: 'target'
+    });
+
+
+    if($(window).height() > $('div.ui.container').height()){
+      console.log($(window).height(), $('div.ui.container').height());
+      $('footer').css({
+        position: 'absolute',
+        bottom: '-10%',
+        display: 'block'
+      });
+    }
+  });
+</script>
+
+<div id="target">
+
+</div>

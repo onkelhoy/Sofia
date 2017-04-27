@@ -4,26 +4,31 @@
     <meta charset="utf-8">
     <title>Recept</title>
     <% include ../../views/head.ejs %>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/note.css">
+    <link rel="stylesheet" href="css/design.css">
+
+    <!-- JavaScript files -->
+    <script type="text/javascript" src="js/note.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
-    <style media="screen">
-    body {
-      background-image: url(images/pattern.png);
-      background-size: 400px 400px;
-    }
-    </style>
+    <script type="text/javascript" src="js/scroll.js"></script>
   </head>
   <body>
     <script type="text/javascript">
       let RECEPTS;
       <% if(typeof recept == "undefined") { %>
-        alert('error');
+
       <% } else { %>
-
         RECEPTS = <%- JSON.stringify(recept) %>;
-
       <% } %>
     </script>
+
+
+
     <div class="ui container">
+      <br><br>
+      <!-- search segment -->
       <div class="ui category search">
         <div class="ui icon input">
           <input class="prompt" type="text" placeholder="Sök recept...">
@@ -31,6 +36,22 @@
         </div>
         <div class="results"></div>
       </div>
+
+      <% include html/note.html %>
     </div>
+
+
+    <footer>
+
+      <div class="ui bottom aligned medium image" style="width: 30%;">
+        <img src="images/sunFlower2.png" alt="sun flowers">
+      </div>
+
+      <div class="ui bottom aligned small image" style="width: 6%;">
+        <img src="images/sunFlower1.png" alt="sun flowers">
+      </div>
+
+      <div class="background"></div>
+    </footer>
   </body>
 </html>
