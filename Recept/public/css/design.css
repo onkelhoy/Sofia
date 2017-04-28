@@ -50,6 +50,10 @@ footer > div.background {
 .ui.search > .input {
   width: 100%;
 }
+.searchOver {
+  position: relative;
+  z-index: 15;
+}
 .ui.search.fixed {
   position: fixed;
   padding: 1em;

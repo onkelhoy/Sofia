@@ -2,7 +2,18 @@ function addNote(options){
   try {
     var note_elm = createElement(null, 'div', 'note'),
         left_elm = createElement(null, 'div', 'left'), // vertical line + holes
-        body_elm = createElement(null, 'div', 'body'); // where all the text will be added
+        body_elm = createElement(null, 'div', 'body'), // where all the text will be added
+        tejp_elm = createElement(null, 'img', 'tejp'); // the tejp (design purpose)
+
+    // give the src and apply css
+    tejp_elm.setAttribute('src', 'images/tejp.png');
+    var width = (Math.round(Math.random()*15+45)/100)*300;
+    tejp_elm.style.width = width+'px';
+    tejp_elm.style.left = 'calc(50% - '+(Math.round(Math.random()*25)*range(1, -1)+width/2)+'px)';
+    addRotation(tejp_elm, Math.random()*(Math.PI/8)*range(1, -1)+range(1, 0)*Math.PI);
+
+    // add tejp to note
+    note_elm.appendChild(tejp_elm);
 
     // create and add the holes to our .left element
     for(j=0; j<(options.notes.length > 5 ? 2 : 1); j++){ // need two containers::four holes
@@ -27,8 +38,11 @@ function addNote(options){
     addLine(body_elm, options.head || options.header, 'h1');
     // notes
     for(i=0; i<options.notes.length; i++){
-      addLine(body_elm, options.notes[i], 'p');
+
+      addLine(body_elm, options.notes[i].text || options.notes[i], options.notes[i].type || 'p', options.notes[i].className);
     }
+
+
 
     // always end line on 5
     var end = options.notes.length%5;
@@ -42,14 +56,20 @@ function addNote(options){
     if(typeof options.angle != 'undefined')
       angle = options.angle;
     else
-      angle = -Math.PI / 2 + Math.random()*Math.PI/10 * Math.random() > .5 ? 1 : -1;
+      angle = Math.PI/20-(Math.random()*(Math.PI/10));
+
+      // box-shadow: 0 5px #aaa;
+    console.log(angle*360/(Math.PI*2));
+    addRotation(note_elm, angle);
+    angle += Math.PI/2;
+    note_elm.style['box-shadow'] = Math.cos(angle)*-23+'px '+ Math.sin(angle)*5+'px #aaa';
 
     var pos = null;
     if(typeof options.position != 'undefined')
       pos = options.position;
     else
       pos = {
-        x: 0,
+        x: Math.random()*(window.innerWidth/2 - 2),
         y: 0
       }
 
@@ -71,8 +91,21 @@ function createElement(text, type, className){
   return elm;
 }
 
-function addLine(note, text, type){
+function range(a, b){ //One or Minus one
+  return Math.random() > .5 ? a : b;
+}
+
+function addRotation(elm, angle){
+  angle *= 360/(Math.PI*2);
+  elm.style['-ms-transform'] = 'rotate('+angle+'deg)';
+  elm.style['-webkit-transform'] = 'rotate('+angle+'deg)';
+  elm.style['transform'] = 'rotate('+angle+'deg)';
+}
+
+function addLine(note, text, type, cn){
   var line = createElement(text, type, 'line');
+  console.log(cn);
+  if(typeof cn != 'undefined') line.className += ' '+cn;
   note.appendChild(line);
   // note.appendChild(document.createElement('hr'));
 }

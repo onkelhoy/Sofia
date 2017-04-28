@@ -13,28 +13,20 @@
     <script type="text/javascript" src="js/note.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript" src="js/recepts.js"></script>
   </head>
   <body>
-    <script type="text/javascript">
-      let RECEPTS;
-      <% if(typeof recept == "undefined") { %>
-
-      <% } else { %>
-        RECEPTS = <%- JSON.stringify(recept) %>;
-      <% } %>
-    </script>
-
-
-
     <div class="ui container">
       <br><br>
       <!-- search segment -->
-      <div class="ui category search">
-        <div class="ui icon input">
-          <input class="prompt" type="text" placeholder="Sök recept...">
-          <i class="search icon"></i>
+      <div class="searchOver">
+        <div class="ui category search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Sök recept...">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
         </div>
-        <div class="results"></div>
       </div>
 
       <% include html/note.html %>
@@ -53,5 +45,25 @@
 
       <div class="background"></div>
     </footer>
+
+    <script type="text/javascript">
+      let RECEPTS = [];
+      <% if(typeof recept != "undefined") { %>
+        RECEPTS = <%- JSON.stringify(recept) %>;
+      <% } %>
+
+      addNotes(RECEPTS);
+
+      if($(window).height() > $('div.ui.container').height()){
+        console.log($(window).height(), $('div.ui.container').height());
+        $('footer').css({
+          position: 'absolute',
+          bottom: '-10%',
+          display: 'block'
+        });
+      }
+      else
+        $('footer').show();
+    </script>
   </body>
 </html>
