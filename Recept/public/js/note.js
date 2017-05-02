@@ -5,12 +5,20 @@ function addNote(options){
         body_elm = createElement(null, 'div', 'body'), // where all the text will be added
         tejp_elm = createElement(null, 'img', 'tejp'); // the tejp (design purpose)
 
+
     // give the src and apply css
     tejp_elm.setAttribute('src', 'images/tejp.png');
+
     var width = (Math.round(Math.random()*15+45)/100)*300;
+    if(typeof options.displayType != 'undefined') {
+      note_elm.className += " display";
+      width = (Math.round(Math.random()*15+45)/100)*500;
+    }
+
     tejp_elm.style.width = width+'px';
     tejp_elm.style.left = 'calc(50% - '+(Math.round(Math.random()*25)*range(1, -1)+width/2)+'px)';
-    addRotation(tejp_elm, Math.random()*(Math.PI/8)*range(1, -1)+range(1, 0)*Math.PI);
+    addTransform(tejp_elm, Math.random()*(Math.PI/8)*range(1, -1)+range(1, 0)*Math.PI, {x:0,y:0});
+
 
     // add tejp to note
     note_elm.appendChild(tejp_elm);
@@ -52,26 +60,33 @@ function addNote(options){
     }
 
     // do the design such as rotation etc if options has or just by random..
-    var angle = 0;
-    if(typeof options.angle != 'undefined')
+    if(typeof options.displayType == 'undefined') {
+      note_elm.addEventListener('click', function(){
+        viewNote(options.obj);
+      });
+      var angle = 0;
+      if(typeof options.angle != 'undefined')
       angle = options.angle;
-    else
+      else
       angle = Math.PI/20-(Math.random()*(Math.PI/10));
 
       // box-shadow: 0 5px #aaa;
-    console.log(angle*360/(Math.PI*2));
-    addRotation(note_elm, angle);
-    angle += Math.PI/2;
-    note_elm.style['box-shadow'] = Math.cos(angle)*-23+'px '+ Math.sin(angle)*5+'px #aaa';
+      // console.log(angle*360/(Math.PI*2));
+      angle += Math.PI/2;
+      note_elm.style['box-shadow'] = Math.cos(angle)*-23+'px '+ Math.sin(angle)*5+'px #aaa';
 
-    var pos = null;
-    if(typeof options.position != 'undefined')
+      var pos = null;
+      if(typeof options.position != 'undefined')
       pos = options.position;
-    else
+      else
       pos = {
-        x: Math.random()*(window.innerWidth/2 - 2),
-        y: 0
+        x: Math.random()*((0.1 * window.innerWidth)/2)*range(1,-1),
+        y: Math.round(Math.random()*20)*range(1,-1)
       }
+
+
+      addTransform(note_elm, angle-Math.PI/2, pos);
+    }
 
     // add the note to a target element
     document.getElementById(options.target).appendChild(note_elm);
@@ -95,16 +110,19 @@ function range(a, b){ //One or Minus one
   return Math.random() > .5 ? a : b;
 }
 
-function addRotation(elm, angle){
+function addTransform(elm, angle, pos){
   angle *= 360/(Math.PI*2);
-  elm.style['-ms-transform'] = 'rotate('+angle+'deg)';
-  elm.style['-webkit-transform'] = 'rotate('+angle+'deg)';
-  elm.style['transform'] = 'rotate('+angle+'deg)';
+
+  var css = 'translate('+pos.x+'px,'+pos.y+'px) '+'rotate('+angle+'deg)';
+
+  elm.style['-ms-transform'] = css;
+  elm.style['-webkit-transform'] = css;
+  elm.style['transform'] = css;
 }
 
 function addLine(note, text, type, cn){
   var line = createElement(text, type, 'line');
-  console.log(cn);
+
   if(typeof cn != 'undefined') line.className += ' '+cn;
   note.appendChild(line);
   // note.appendChild(document.createElement('hr'));

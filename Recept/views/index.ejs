@@ -8,6 +8,8 @@
     <!-- CSS files -->
     <link rel="stylesheet" href="css/note.css">
     <link rel="stylesheet" href="css/design.css">
+    <!-- Amatic+SC|Annie+Use+Your+Telescope|Give+You+Glory|Handlee -->
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
 
     <!-- JavaScript files -->
     <script type="text/javascript" src="js/note.js"></script>
@@ -54,16 +56,9 @@
 
       addNotes(RECEPTS);
 
-      if($(window).height() > $('div.ui.container').height()){
-        console.log($(window).height(), $('div.ui.container').height());
-        $('footer').css({
-          position: 'absolute',
-          bottom: '-10%',
-          display: 'block'
-        });
-      }
-      else
-        $('footer').show();
+      checkWidth();
+
+      setFooter();
     </script>
   </body>
 </html>

@@ -42,7 +42,19 @@ $(document).ready(function(){
   });
 
 });
+let clickTime = 0;
 
 function select(id){
-  console.log(id);
+  clickTime++;
+  if(clickTime>1){
+    clickTime=0;
+
+    for(i=0; i<RECEPTS.recept.length; i++){
+      if(RECEPTS.recept[i].id == id){
+        viewNote(RECEPTS.recept[i]);
+        break;
+      }
+    }
+    //do work
+  }
 }
