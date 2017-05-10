@@ -1,3 +1,4 @@
+console.log("bajskorv");
 (function(){
   "use strict";
 
