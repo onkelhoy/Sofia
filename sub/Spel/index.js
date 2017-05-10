@@ -12,9 +12,7 @@
   subapp.set('view engine', 'ejs');
 
   // the different paths
-  var msg2 = require('./games/bajs/index');
   subapp.use('/WebGl', require('./games/webgl/index'));
-
 
   // main path
   subapp.get('/', function(req, res){
