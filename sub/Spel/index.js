@@ -13,6 +13,7 @@
 
   // the different paths
   var msg = require('./sub/bajs');
+  var msg2 = require('./sub/sub2/bajs');
   // subapp.use('/WebGl', require('./games/WebGl/index'));
 
 
