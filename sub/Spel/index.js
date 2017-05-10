@@ -12,7 +12,7 @@
   subapp.set('view engine', 'ejs');
 
   // the different paths
-  subapp.use('/WebGl', require('./sub/WebGl/index'));
+  subapp.use('/WebGl', require('./sub/Spel/sub/WebGl/index'));
 
 
   // main path
