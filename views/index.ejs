@@ -12,7 +12,7 @@
     <% for(var i = 0; i < dictionaries.length; i++) { %>
       <% var d = dictionaries[i] %>
       <% if(!d.startsWith('.') && d != 'node_modules' && d != 'views' && d != 'semantic' && d != 'public') { %>
-        <li><a href="/<%= dictionaries[i] %>"><%= dictionaries[i] %></a></li>
+        <li><a href="<%= root %><%= dictionaries[i] %>"><%= dictionaries[i] %></a></li>
       <% } %>
     <% } %>
   </ul>

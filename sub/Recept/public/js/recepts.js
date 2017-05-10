@@ -1,3 +1,10 @@
+// manage notes
+function create(){
+  
+}
+
+
+// display notes..
 function addNotes(data){
   const re = /\b[\w']+(?:\s+[\wåäöÅÄÖ']+){0,8}/g;
 

@@ -1,0 +1,17 @@
+[
+  {
+    "name":"kök",
+    "data": [
+      {
+        "name":"kastrull",
+        "tag":"kastrull,matlagning",
+        "image":"https://az666937.vo.msecnd.net/27/7eceaa8f-a73a-4ccf-ab8c-e44b5ada0122.jpg",
+        "price": "300kr",
+        "store": "ikea",
+        "rea":"nej",
+        "notis":"Den skulle vara jätte bra när vi lagar soppor och andra maträtter som innehåller flytande element av slag",
+        "date":1493970402501
+      }
+    ]
+  }
+]
