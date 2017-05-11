@@ -119,7 +119,7 @@ function show(){
     h = Number(h);
 
     // the ammount you get
-    var cash = Math.round((h + (m == 0 ? 0 : 60/m)) * 150)+'';
+    var cash = Math.round((h + (m == 0 ? 0 : m/60)) * 150)+'';
     // reverse it for splitting by 3th char
     cash = cash.split("").reverse().join("");
     // split by 3th
